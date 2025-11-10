@@ -1960,6 +1960,26 @@ INSERT INTO `parametro_institucional` (
 -- 4. Parámetros Operacionales
 ('HORA_LIMITE_AJUSTE_MENU', '10:00', 'string', 'Hora límite (HH:MM) para realizar ajustes o anulaciones de órdenes de producción.', 1);
 
+
+INSERT INTO `registro_afluencia` (
+    `fecha_hora`,
+    `id_tiempo`,
+    `conteo`,
+    `tipo_registro`,
+    `id_usuario_registro`
+) VALUES
+-- Registros de Desayuno (ID 1) en 2025-11-09
+('2025-11-09 06:30:00', 1, 15, 'manual', 1),
+('2025-11-09 07:00:00', 1, 30, 'manual', 1),
+('2025-11-09 07:30:00', 1, 45, 'manual', 1),
+('2025-11-09 08:00:00', 1, 10, 'manual', 1),
+-- Registros de Almuerzo (ID 2) en 2025-11-09
+('2025-11-09 12:00:00', 2, 80, 'manual', 1),
+('2025-11-09 12:30:00', 2, 120, 'manual', 1),
+('2025-11-09 13:00:00', 2, 90, 'manual', 1),
+('2025-11-09 13:30:00', 2, 30, 'manual', 1);
+
+
 -- Ejecutar cierre de caja. Ver script de las ultimas modificaciones.
 CALL SP_CERRAR_CAJA(
     1,                               -- p_id_usuario_cajero (El ID del cajero que está realizando el cierre)
